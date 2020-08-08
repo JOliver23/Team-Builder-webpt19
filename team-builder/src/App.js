@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MemberCard from './components/MemberCard';
 
 function App() {
+  const [team, setNewMember] = useState([
+    {
+      id: 1,
+      name: "Bubba Mooseford",
+      age: "25",
+      role: "HR Morale Booster"
+    },
+    {
+      id: 2,
+      name: "Wendy Ibber",
+      age: "29",
+      role: "Fun Inspector"
+    }
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MemberCard team={team} />
     </div>
   );
 }
